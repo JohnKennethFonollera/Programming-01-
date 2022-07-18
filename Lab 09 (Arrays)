@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Week09_Assignment_Arrays
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello Im John !!");
+            Console.WriteLine("Please enter your 6 number :");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            int num3 = Convert.ToInt32(Console.ReadLine());
+            int num4 = Convert.ToInt32(Console.ReadLine());
+            int num5 = Convert.ToInt32(Console.ReadLine());
+            int num6 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Elements in array are :");
+            int[] numbers = { num1, num2,num3,num4,num5,num6 };
+            for (int j = 0; j < numbers.Length; j++)
+            {
+                Console.WriteLine(numbers[j]);
+            }
+            Console.WriteLine("__________________________________");
+            MaxMinSumAvg();
+            Console.WriteLine("__________________________________");
+            NegArray();
+            Console.WriteLine("__________________________________");
+            int u = 0;
+            int[] arr = new int[5];
+
+            Console.WriteLine("Enter array elements : ");
+            for (u = 0; u < arr.Length; u++)
+            {
+                Console.Write("Element[" + (u + 1) + "]: ");
+                arr[u] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("List of negative numbers : ");
+            for (u = 0; u < arr.Length; u++)
+            {
+                if (arr[u] < 0)
+
+                    Console.WriteLine("Sum of 5 negative elements in Array is : " + test(arr));
+            }
+            Console.WriteLine("_________________________________");
+                int i, n, even = 0, odd = 0;
+                Console.WriteLine("Enter the number of elements to be inserted: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                int[] a = new int[n];
+                Console.WriteLine("Enter the array elements:");
+                for (i = 0; i < n; i++)
+                {
+                    a[i] = Convert.ToInt32(Console.ReadLine());
+                }
+                for (i = 0; i < n; i++)
+                {
+                    if (a[i] % 2 == 0)
+                    {
+                        even = even;
+                        even++;
+                    }
+                    else
+                    {
+                        odd = odd;
+                        odd++;
+                    }
+                }
+                Console.WriteLine("Number of even terms are: " + even);
+                Console.WriteLine("Number of odd terms are: " + odd);
+        }
+        static void MaxMinSumAvg()
+        {
+            Console.WriteLine("Please enter 6 numbers");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            int num3 = Convert.ToInt32(Console.ReadLine());
+            int num4 = Convert.ToInt32(Console.ReadLine());
+            int num5 = Convert.ToInt32(Console.ReadLine());
+            int num6 = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = { num1, num2, num3, num4, num5, num6 };
+            Console.WriteLine("__________________________________");
+            Console.WriteLine(numbers.Max()); //largest value
+            Console.WriteLine(numbers.Min()); //smallest value
+            Console.WriteLine(numbers.Sum()); //sum of numbers
+        }
+        static void NegArray()
+        {
+            {
+                int i = 0;
+                int[] arr = new int[5];
+
+                Console.WriteLine("Enter array elements : ");
+                for (i = 0; i < arr.Length; i++)
+                {
+                    Console.Write("Element[" + (i + 1) + "]: ");
+                    arr[i] = int.Parse(Console.ReadLine());
+                }
+
+                Console.WriteLine("List of negative numbers : ");
+                for (i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] < 0)
+                        Console.Write(arr[i] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+        public static int test(int[] values)
+        {
+            return values.Where(x => x < 0).OrderBy(x => x).Take(5).Sum();
+        }
+    }
+}
