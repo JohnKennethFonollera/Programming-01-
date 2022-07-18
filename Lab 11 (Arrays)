@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment_week_11_ARRAYS
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello Im John Welcome to my program!");
+            Console.WriteLine("Please choose a method");
+            Console.WriteLine("Enter L for Letters, N for Numbers, and P for Poem =");
+            char Letter = Convert.ToChar(Console.ReadLine().ToLower());
+            if (Letter == 'l')
+            {
+                Letters();
+                Console.WriteLine("_______________________________________________________________________________________");
+                Console.WriteLine("if you want to see reverse letters press 1 and press any number to exit");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                switch (num1)
+                {
+                    case 1:
+                        {
+                            char[] letters = "the quick brown fox jumps over the lazy dog".ToCharArray();
+                            Array.Reverse(letters);
+                            foreach (char i in letters)
+                            {
+                                Console.WriteLine(i);
+                            }
+                            break;
+                        }                   
+                    default:
+                        Console.WriteLine("Exit");
+                        break;                    
+                }
+            }
+            else if (Letter == 'n')
+            {
+                Numbers();
+                Console.WriteLine("_______________________________________________________________________________________");
+                Console.WriteLine("if you want to find the position of 3 numbers in array press 1 and press any number to exit");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                
+                switch (num1)
+                {
+                    case 1:
+                        {
+                            Console.WriteLine("Pick a number");
+                            int pick = Convert.ToInt32(Console.ReadLine());
+                            //int[] numbers = { 0, 2, 3, 5, 7, 1, 1, 3, 5, 6, 7, 2, 5, 2 };
+                            int[] numbers = { 5, 7, 1 };
+                            
+                            int target = pick;
+                            int pos = Array.BinarySearch(numbers,target);
+                            if (pos >= 0)
+                            {
+                                Console.WriteLine($"Item {numbers[pos].ToString()} found at position {pos+1}.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Item is not found");
+                            }
+
+                            break;
+                        }
+                    default:
+                        Console.WriteLine("Exit");
+                        break;
+                }
+            }
+            else if (Letter == 'p')
+            {
+                Poem();
+                Console.WriteLine("_______________________________________________________________________________________");
+                Console.WriteLine("if you want to see Sorted Poem Array press 1 and press any number to exit");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                switch (num1)
+                {
+                    case 1:
+                        {
+                            string[]poem= "mary had a little lamb its fleece was white as snow".Split();
+                            Array.Sort(poem);
+                            foreach (string i in poem)
+                            {
+                                Console.WriteLine(i);
+                            }
+                            break;
+                        }
+                    default:
+                        Console.WriteLine("Exit");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid Letter");
+            }
+        }
+        public static void Letters() 
+        {
+            char[] letters = "the quick brown fox jumps over the lazy dog".ToCharArray();
+            foreach (char c in letters)
+            {
+                Console.WriteLine(c);
+            }
+            return;
+        }
+        static void Numbers()
+        {
+            int[] numbers = { 0, 2, 3, 5, 7, 1, 1, 3, 5, 6, 7, 2, 5, 2 };
+            for (int i = 0; i < numbers.Length; i++) 
+            {
+                Console.WriteLine(numbers[i]);
+            }
+            return ;
+        }
+        static void Poem()
+        {
+            string[]poem= "mary had a little lamb its fleece was white as snow".Split();
+            for (int i = 0;i < poem.Length; i++)
+            {
+                Console.WriteLine(poem[i]);
+            }
+        }
+       
+    }
+
+}
