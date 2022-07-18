@@ -1,0 +1,120 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab_week_07
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //shows the menu of the program to user
+            Console.WriteLine(" 1 =Conveerting Inches to CM");
+            Console.WriteLine(" 2 =Converting Fahrenheit to Celsius (F to C conversion");
+            Console.WriteLine(" 3 =Calculating Quadratic Equations-Math is Fun!!");
+
+            //pressing four will be terminate the program
+            Console.WriteLine(" 4 =Exit ");
+
+            //Ask the user to enter a numeric equtaion
+            Console.WriteLine("HELLO PLEASE ENTER YOUR INPUT IN NUMERIC EQUATION");
+
+            
+            int num1=Convert.ToInt32(Console.ReadLine());
+
+            //switch the equtaion depending on what number the user enters
+            switch (num1)
+            {
+                case 1:
+                    {
+                        //Ask the User to enter the measurement in inches
+                        Console.WriteLine("Please Enter your measurement in Inches");
+
+                        //Convert to Double 
+                        double num2 = Convert.ToDouble(Console.ReadLine());
+
+                        //Calculate the Measurement
+                        Console.WriteLine($"Your Centimeter now is = {num2 * 2.54}");
+                        Console.ReadLine();
+                        break;
+                    }
+                    case 2:
+                    {
+                        //Ask the User to enter the Temperature in Fahrenheit
+                        Console.WriteLine($"Please Enter the temperature in Fahrenheit =");
+
+                        //Conver to Double
+                        double num3 = Convert.ToDouble(Console.ReadLine());
+
+                        //Calculate the Equivalent of Fahrenheit to Celcuis 
+                        Console.WriteLine($"The Equivalent of Fahrenheit to Celcius is {(num3 - 32) * 5/9}");
+                        Console.ReadLine();
+                        break;
+                    }
+                case 3:
+                    {
+                        //Throw a Indicator 
+                        double a = 0, b = 0, c = 0, result1 = 0, result2 = 0;
+
+                        //Welcome the User
+                        Console.WriteLine("Welcome to the Quadratic formula. You will be ask to provide a, b, c, from your equation ax + bx + cx");
+                        Console.WriteLine("________________________________________________________________________________________________");
+
+                        //Enter the number
+                        Console.WriteLine("Enter your 1st number =="); 
+
+                       //Convert to Int
+                        a = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter your 2nd number ==");
+                        b = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter your 3rd number ==");
+                        c = Convert.ToInt32(Console.ReadLine());
+
+                        //Formula to compute equation1
+                        double equation1 = (Math.Sqrt(Math.Pow(b, 2))) - (4 * a * c);
+
+                        
+                        if (equation1 > 0)
+                        {
+                            result1 = (-b + equation1) / (2 * a);
+                            result2 = (-b - equation1 / (2 * a));
+
+                            //if the equation1 is less greater than 0 the results would be 2 roots: X1=result1 X2=result2
+                            //The output of equation1 
+                            Console.WriteLine($"The roots are X1 = {result1} and X2 = {result2}");
+                        }
+                        else if (equation1 == 0)
+                        {
+                            //If the Equation 1 is equals to 0 the  results would be 1 root
+                            //The output of equation1
+                            Console.WriteLine($"There is one root and its {result1}");
+                        }
+                        else 
+                        {
+                            //if the equation1 is less than 0 the results would be has two distinct (non-real)roots 
+                            //The output of equation1
+                            Console.WriteLine($" The equation has two distinct (non-real) roots");
+
+                        }
+                        break;
+
+                    }
+                case 4:
+                    {
+                        //terminate the program
+                        Console.WriteLine("Exit");
+                        break;
+                    }
+
+                    //out of the limits
+                    default:
+                    Console.WriteLine("Invalid input");
+                    Console.ReadLine();
+                    break;
+                   
+            }
+        }
+    }
+}
