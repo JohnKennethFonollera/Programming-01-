@@ -1,0 +1,164 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace General_Assignment_Part_3
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello, Im JOHN !!");
+            Console.WriteLine("_______________________________________");
+            Console.WriteLine("10 - 220 ");
+            CalculateDifference(10, 220);
+            Console.WriteLine("123 - 231 ");
+            CalculateDifference(123,231);
+            Console.WriteLine("213 - 12321 ");
+            CalculateDifference(213,12321);
+            Console.WriteLine("12321 - 2132123 ");
+            CalculateDifference(12321,2132123);
+            Console.WriteLine("_______________________________________");
+            Console.WriteLine("Current: 1.5 and Resistance: 21.3 ");
+            CalculatePower(1.5, 21.3);
+            Console.WriteLine("Current: 3.3 and Resistance: 15.8 ");
+            CalculatePower(3.3, 15.8);
+            Console.WriteLine("_______________________________________");
+            Console.WriteLine("No. of courses: 6 ");
+            CalculateTuitionFee(6, 449.99);
+            Console.WriteLine("No. of courses: 10");
+            CalculateTuitionFee(10, 449.99);
+            Console.WriteLine("No. of courses: 4");
+            CalculateTuitionFee(4, 449.99);
+            Console.WriteLine("No.of courses: 9");
+            CalculateTuitionFee(9, 449.99);
+            Console.WriteLine("_______________________________________");
+            Console.WriteLine("Sale Amount: 900");
+            CalculateCommmission(900);
+            Console.WriteLine("Sale Amount: 1000");
+            CalculateCommmission(1000);
+            Console.WriteLine("Sale Amount: 2000");
+            CalculateCommmission(2000);
+            Console.WriteLine("_______________________________________");
+            NumberOFBurgers();
+            NumberOFBurgers();
+            Console.WriteLine("_______________________________________");
+            AreaOfTriangle(5.83, 4.24, 8.00);
+            Console.WriteLine("_______________________________________");
+            ConvertCelsiusToFarenheit(0);
+            ConvertCelsiusToFarenheit(50);
+            ConvertCelsiusToFarenheit(100);
+            Console.WriteLine("_______________________________________");
+            ConvertFarenheitToCelsius(0);
+            ConvertFarenheitToCelsius(32);
+            ConvertFarenheitToCelsius(212);
+            Console.WriteLine("_______________________________________");
+            ConvertCelsiusToKelvin(-196);
+            ConvertCelsiusToKelvin(0);
+            ConvertCelsiusToKelvin(100);
+            Console.WriteLine("_______________________________________");
+            Console.WriteLine("Conversion of square "); Console.Write("Please enter an Interger = ");
+            int square = Convert.ToInt32(Console.ReadLine());
+            Square(square);
+            Console.WriteLine("Converion of Cube");
+            Cube(Square(square));
+
+        }
+        static int CalculateDifference(int num1, int num2)
+        {
+            Console.Write("=");
+            int difference = num1 - num2;
+            Console.WriteLine(difference);
+            return difference;
+        }
+        static double CalculatePower(double current, double resistance)
+        {
+            Console.Write("=");
+            double power = current * current * resistance;
+            Console.WriteLine(power);
+            return power;
+        }
+        static double CalculateTuitionFee(double NumberOFCourses , double CostPerCourse)
+        {
+            Console.Write("=");
+            double fee = CostPerCourse * NumberOFCourses + 15.25;
+            Console.WriteLine(fee); 
+            return fee;
+        }
+        static double CalculateCommmission(double saleAmount)
+        {
+                Console.Write("=");
+                if (saleAmount < 1000)
+                {
+                    Console.WriteLine(saleAmount);
+                }
+                else if (saleAmount == 1000)
+                {
+                    double Commission = saleAmount + 10;
+                    Console.WriteLine(Commission);
+                }
+                else
+                {
+                double Commission = saleAmount + 20;
+                Console.WriteLine(Commission);
+                }
+            return saleAmount;
+        }
+        static void NumberOFBurgers()
+        {
+            Console.WriteLine("How many Burger do you want to buy? ");
+            double burgers = Convert.ToInt32(Console.ReadLine());
+            burgers = burgers * 1.39;
+            Console.WriteLine(burgers);
+            return;
+        }
+        static double AreaOfTriangle(double num1, double num2, double num3)
+        {
+            Console.WriteLine("Area of Triangle with 5.83 | 4.24 | 8.00 sides");
+            Console.Write("=");
+            double Area = num1 + num2 + num3 / 2;
+            Console.WriteLine(Area);
+            return Area;
+        }
+        static int ConvertCelsiusToFarenheit(int num1)
+        {
+            Console.WriteLine("Conversion of 0 | 50 | 100 Celsius to Farenheit");
+            Console.Write("=");
+            int Farenheit = num1 * 9 / 4 + 32;
+            Console.WriteLine(Farenheit);
+            return Farenheit;
+        }
+        static int ConvertFarenheitToCelsius(int num1)
+        {
+            Console.WriteLine("Conversion of 0 | 32 | 212 Farenheit to Celcius");
+            Console.Write("=");
+            int Celsius = num1 -32 * 5 / 9;
+            Console.WriteLine(Celsius);
+            return Celsius;
+        }
+        static double ConvertCelsiusToKelvin(double num1)
+        {
+            Console.WriteLine("Conversion of -196 | 0 | 100 Celsius to Kelvin");
+            Console.Write("=");
+            double Kelvin = num1 + 273.15;
+            Console.WriteLine(Kelvin);
+            return Kelvin;
+        }
+        static int Square(int square)
+        {
+            Console.Write("=");
+            square = square * square;
+            Console.WriteLine(square);
+            return square;
+        }
+        static int Cube(int square)
+        {
+            Console.Write("=");
+            square = square * square;
+            Console.WriteLine(square);
+            return square;
+        }
+    }
+}
