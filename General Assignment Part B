@@ -1,0 +1,118 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace General_Assignment_Part_1_and_part_2__2_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello Im JOHN , Welcome !");
+            DisplayHorizontalStars(0);
+            DisplayHorizontalStars(5);
+            DisplayHorizontalStars(10);
+            VerticalLines (0);
+            VerticalLines(5);
+            VerticalLines(10);
+            VolumeOfSphere (1);
+            VolumeOfSphere(2);
+            VolumeOfSphere(10);
+            SellinngPrice();
+            CelsiusToFarenheit(10.2);
+        }
+        static int DisplayHorizontalStars(int num1)
+        {
+            Console.WriteLine("Display Horizontal Stars");
+            int counter = 0;
+            int stop = (num1);
+            do
+            {
+                counter = counter + 1;
+                Console.WriteLine("*");
+            }while (counter < stop);
+            return num1;
+        }
+        static int VerticalLines(int num1)
+        {
+            Console.WriteLine("Display Vertical Stars");
+            if (num1 == 0)
+            {
+                Console.WriteLine("*");
+            }
+            else if (num1 == 5)
+            {
+                Console.WriteLine("*****");
+            }
+            else
+            {
+                Console.WriteLine("**********");
+            }
+            return num1;
+        }
+        static double VolumeOfSphere(double num1)
+        {
+            Console.WriteLine("Display Volume of Sphere");
+            if (num1 == 1)
+            {
+                num1 = 4.0 / 3 * Math.PI * 1 * 1;
+                Console.WriteLine(num1);
+            }
+            else if (num1 == 2)
+            {
+                num1 = 4.0 /3 * Math.PI * 2 * 2 * 2;
+                Console.WriteLine(num1);
+            }
+            else
+            {
+                num1 = 4.0 / 3 * Math.PI * 10 * 10 *10;
+                Console.WriteLine(num1);
+            }
+            return num1;
+        }
+        static void SellinngPrice()
+        {
+            bool check = true;
+            do
+            {
+                Console.WriteLine("Please choose between the two-letter province code: (ON) for Ontario or (QC) for Quebec");
+                string province = Convert.ToString(Console.ReadLine());
+                if (province == "ON")
+                {
+                    Console.WriteLine("Please Enter your price : ");
+                    double sell = Convert.ToDouble(Console.ReadLine());
+                    sell = 0.13 + sell;
+                    Console.WriteLine($"Your total selling price is : {sell}");
+                    check = true;
+                }
+                else if (province == "QC")
+                {
+                    Console.WriteLine("Please Enter your price :");
+                    double sell = Convert.ToDouble(Console.ReadLine());
+                    sell = 0.17 + sell;
+                    Console.WriteLine($"Your total selling price is : {sell}");
+                    check= true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Province code please try again");
+                    check = false;
+                }
+            }while (check == false);
+        }
+        static double CelsiusToFarenheit(double num1)
+        {
+            Console.WriteLine("Display Celsius to Farenheit ");
+            int counter = 0;
+            int stop = 10;
+            do
+            {
+                counter = counter + 1;
+                Console.WriteLine($" 10.2 Celcius = {num1 * 9/5 + 32} Farenheit ");
+            } while (counter < stop);
+            return num1;
+        }
+    }
+}
