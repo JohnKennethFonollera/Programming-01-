@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace frameworking_02
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+
+            double num1 = 0.14;
+            double num2 = 0.16;
+            double num3 = 0;
+            Console.WriteLine("Please write the cost of the Items");
+            int num4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Write your Country letter code= ");
+            String province = Console.ReadLine();
+            switch (province)
+            {
+                case "ON":
+                    Console.WriteLine($"Your Total is = {(num4 - num1)} ");
+                    break;
+                case "PQ":
+                    Console.WriteLine($"Your total is= {(num4 - num2)}");
+                    break;
+                case "any":
+
+                    Console.WriteLine($"Your total is= {(num4 - num3)}");
+                    break;
+
+                default:
+                    Console.WriteLine(" I guess you type wrong:");
+                    break;
+
+
+            }
+        }
+    }
+}
