@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Week_10_Arrays_B
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, Im John");
+            Console.WriteLine("Please choose between (N) for Names , (P) for pets , and (L) for Letters ");
+            char options = Convert.ToChar(Console.ReadLine());
+            if (options == 'N')
+            {
+                Console.WriteLine("_____________________________________");
+                Names();
+                Console.WriteLine("_____________________________________");
+            }
+            else if (options == 'P')
+            {
+                Console.WriteLine("_____________________________________");
+
+                Console.WriteLine("_____________________________________");
+            }
+            else if (options == 'L')
+            {
+                Console.WriteLine("_____________________________________");
+                Letters();
+                Console.WriteLine("_____________________________________");
+                Console.WriteLine("I noticed that there's so many spaces on the start of lines because in the Reverse Array there is a space every one word so the total space is 7 ");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Letter");
+            }
+        }
+        static void Names()
+        {
+            string[] names = "Dean Bart Luke Olaf Tess Sara Vida Sean Rita Hana Arya Curt Eden Fred Gina West Jack Kate Zuri Dave Toni Ruth Vera Brad Theo Xena Mark Neal Nick".Split();
+            Array.Reverse(names);
+            foreach (string name in names)
+            {
+                Console.WriteLine($" For Array.Reverse :{name}");
+            }
+            Console.WriteLine("_____________________________________");
+            Array.Sort(names);
+            foreach (string name in names)
+            {
+                Console.WriteLine($" For Array.Sort :{name}");
+            }
+            Console.WriteLine("_____________________________________");
+            int Find =Array.BinarySearch(names, "Nick");
+            foreach (string name in names)
+            {
+                Console.WriteLine($" For Array.BinarySearch :{name}");
+            }
+            Console.WriteLine("_____________________________________");
+            ShowWhere(names, Find);
+        }
+        static void ShowWhere<T>(T[] array, int Find)
+        {
+            Console.WriteLine(" Nick is Found at Find {0}." , Find + 1);
+        }
+        static void Pets()
+        {
+
+        }
+        static void Letters()
+        {
+
+            char[] letters = "dog cat hamster rabbit parrot buggie gerbil ".ToCharArray();
+            Array.Reverse(letters);
+            foreach (char c in letters)
+            {
+                Console.WriteLine($" For Array.Reverse :{c}");
+            }
+            Console.WriteLine("_____________________________________");
+            Array.Sort(letters);
+            foreach (char c in letters)
+            {
+                Console.WriteLine($" For Array.Sort : {c}");
+            }
+        }
+    }
+}
