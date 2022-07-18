@@ -1,0 +1,141 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Week10_Arrays_A__Lab_
+{ 
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello Welcome to my program, Im JOHN !!");
+            Console.WriteLine("Please Choose ");
+            Console.WriteLine("Letter O for Obama , Letter V for Vowels , Small Letter p for Primes , Letter P for Poem , Letter N for Numbers");
+            char option = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("____________________________________________");
+            
+            if (option == 'O')
+            {
+                Console.WriteLine("____________________________________________");
+                Obama();
+                Console.WriteLine("____________________________________________");
+            }
+            else if (option == 'V')
+            {
+                Console.WriteLine("____________________________________________");
+
+                Console.WriteLine("____________________________________________");
+            }
+            else if (option == 'P')
+            {
+                Console.WriteLine("____________________________________________");
+                Poem();
+                Console.WriteLine("____________________________________________");
+            }
+            else if (option == 'p')
+            {
+                Primes();
+                Console.WriteLine("if you want to see it om double Please type 1 , For the sum of the String please type 2, For the sum of primes array that greater than 10 please type 3 and any number for Exit");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                switch (num1)
+                {
+                    case 1:
+                        {
+                            Console.WriteLine("____________________________________________");
+                            PrimesDouble();
+                            Console.WriteLine("____________________________________________");
+                            break;
+                        }
+                        case 2:
+                        {
+                            Console.WriteLine("____________________________________________");
+                            Primes();
+                            int[] primes = { 2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 + 23 + 29 + 31 + 37 };
+                            foreach (int i in primes)
+
+                                Console.WriteLine($" = {i}");
+                                
+                            Console.WriteLine("____________________________________________");
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.WriteLine("____________________________________________");
+                            GreaterThanPrimesArray();
+                            Console.WriteLine("____________________________________________");
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Invalid Number");
+                            break;
+                        }
+                }
+            }
+            else if (option == 'N')
+            {
+                Console.WriteLine("____________________________________________");
+                EvenOddNumbers();
+                Console.WriteLine("____________________________________________");
+            }
+            else
+            {
+                Console.WriteLine("Sorry your Input is not Correct");
+            }
+        }
+        static void Obama()
+        {
+            string[] obama = { "Barrack", "Hussein", "Obama" };
+            foreach (string o in obama)
+            Console.WriteLine(o); 
+        }
+        static void Poem()
+        {
+            string[] poem = { "Mary", "had", "a", "little", "lamb" };
+            Array.Reverse(poem);
+            foreach (string p in poem)
+            Console.Write(p);
+            Console.ReadLine();
+        }
+        static void Primes()
+        {
+            int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
+            foreach (int P in primes)
+                Console.WriteLine(P);
+            return;
+        }
+        static void PrimesDouble()
+        {
+            int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
+            foreach (int p in primes)
+                Console.WriteLine($"{p:f2}");
+            Console.WriteLine("____________________________________________");
+        }
+        static void GreaterThanPrimesArray()
+        {
+            Console.WriteLine(" Your prime arrays that greater than 10 is : 11 , 13 , 17 ,19 , 23 ,31 ,37 ");
+            int[] primes = { 11 + 13 + 17 + 19 + 23 + 29 + 31 + 37 };
+            foreach (int i in primes)
+                Console.WriteLine($" The total sum of primes array that greater than 10 is = {i}");
+
+        }
+        static void EvenOddNumbers()
+        {
+            Console.WriteLine("This is the List of Numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ");
+             int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+            foreach (var result in numbers)
+            {
+                if (result % 2 == 0)
+                {
+                    Console.WriteLine(result + " is Even number ");
+                }
+                else
+                {
+                    Console.WriteLine(result + " is Odd number ");
+                }
+            }
+        }
+    }
+}
