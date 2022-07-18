@@ -1,0 +1,147 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace General_Assignment_Part_1_and_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            DisplayMenu();
+            bool check = false;
+            do
+            {
+                int Menu = Convert.ToInt32(Console.ReadLine());
+                switch (Menu)
+                {
+                    case 0:
+                        {
+                            Console.WriteLine("End Program");
+                            check = false;
+                            break;
+                        }
+                    case 1:
+                        {
+                            DisplayPersonalInfo();
+                            Console.WriteLine("__________________________________________________");
+                            check = true;
+                            break;
+                        }
+                    case 2:
+                        {
+                            CalculateTuition();
+                            Console.WriteLine("__________________________________________________");
+                            check = true;
+                            break;
+                        }
+                    case 3:
+                        {
+                            CalculateAreaOfCircle();
+                            Console.WriteLine("__________________________________________________");
+                            check = true;
+                            break;
+                        }
+                    case 4:
+                        {
+                            AreaOfTriangle();
+                            Console.WriteLine("__________________________________________________");
+                            check = true;
+                            break;
+                        }
+                    case 5:
+                        {
+                            CalculateSaleCommission();
+                            Console.WriteLine("__________________________________________________");
+                            check = true;
+                            break;
+                        }
+                    case 6:
+                        {
+                            Console.WriteLine("Sorry");
+                            Console.WriteLine("__________________________________________________");
+                            check = true;
+                            break;
+                        }
+                    default:
+                        Console.WriteLine("Invalid Number Please Try Again");
+                        break;
+
+                }
+            } while (check==true);
+        }
+        static void DisplayPersonalInfo()
+        {
+            Console.WriteLine(" My name is JOHN KENNETH D. FONOLLERA ");
+            Console.WriteLine(" I am currently taking Software Engineering Technician on CENTENNIAL COLLEGE ");
+            Console.WriteLine(" My favoritte course is Programming 01 and Web Interface Design ");
+        }
+        static void CalculateTuition()
+        {
+            Console.WriteLine("Please enter how many courses are you currently taking");
+            int take =Convert.ToInt32(Console.ReadLine());
+            if (take > 0)
+            {
+                Console.WriteLine($"Your total Tuition fee cost is = {take * 569.99}");
+            }
+            else if (take == 0)
+            {
+                Console.WriteLine($"Your total Tuition fee is 0");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
+        }
+        static void CalculateAreaOfCircle()
+        {
+            Console.WriteLine("Please Enter the radius of a circle");
+            int radius = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"The Area of Circle is = {Math.PI * radius * radius}");
+        }
+        static void AreaOfTriangle()
+        {
+            Console.WriteLine("Please Enter base of a triangle");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter height of a triangle");
+            int h = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"The Area of a Triangle is = {b * h / 2}");
+        }
+        static void CalculateSaleCommission()
+        { 
+            Console.WriteLine("Please enter your Commission");
+            int com = Convert.ToInt32(Console.ReadLine());
+            int per = com / 4;
+            if (com >= 1000)
+            {
+                Console.WriteLine($"Your Sale Commission is = {com + per}");
+            }
+            else
+            {
+                Console.WriteLine("There is no Commission");
+            }
+        }
+        static void DisplaySineTable()
+        {
+
+        }
+        static void DisplayMenu()
+        {
+            Console.WriteLine("==============John Kenneth D. Fonollera");
+            Console.WriteLine("Systems==============");
+            Console.WriteLine("]             1. Display Personal Information");
+            Console.WriteLine("]             2. Calculate Tuition");
+            Console.WriteLine("]             3. Calculate Area of Circle");
+            Console.WriteLine("]             4. Calculate The Area of a Triangle");
+            Console.WriteLine("]             5. Calculate Sales Commission");
+            Console.WriteLine("]             6. Display Sine Table");
+            Console.WriteLine("]             0. End Program");
+            Console.WriteLine("==================================================");
+            Console.WriteLine("===");
+            Console.WriteLine("Enter the number of your choice -> ");   
+        }
+
+        
+    }
+}
