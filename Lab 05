@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Net_framework_Week05
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 0;
+            Console.WriteLine("Before While Loop");
+            do
+            {
+                Console.WriteLine(i);
+                i++;
+            } while (i < 5);
+            Console.WriteLine("After While Loop");
+            Console.ReadLine();
+        }
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment_05
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            {
+                string savedUername = "john";
+                string uername;
+                string savedPassword = "john123";
+                string password;
+
+                Console.Write("Please enter your usernamet: ");
+                uername = Console.ReadLine();
+
+                Console.Write("Please enter your password: ");
+                password = Console.ReadLine();
+
+
+
+                if ((savedUername.ToLower() == (uername.ToLower())
+                ) && (savedPassword == password))
+                {
+                    Console.WriteLine("Successful login.");
+                }
+                else
+                {
+                    Console.WriteLine("Either username or password is incorrect.");
+                }
+
+                Console.WriteLine("########################");
+                Console.ReadLine();
+            }
+
+        }
+    }
+}
