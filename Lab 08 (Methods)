@@ -1,0 +1,169 @@
+using System;
+
+namespace Week_08_Assignment_METHODS
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            bool status = false;
+            do
+            {
+                Console.WriteLine("Welcome to my program, My name is JOHN !!");
+                Console.WriteLine("________________________________________________________________________________");
+                Console.WriteLine("CALCULATION MENU");
+                Console.WriteLine("Press 1 for Calculate Sum");
+                Console.WriteLine("Press 2 for Calculate Sum of Squares");
+                Console.WriteLine("Press 3 for Calculate Sum of Cubes");
+                Console.WriteLine("Press 4 To Exit");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+
+
+                switch (num1)
+                {
+                    case 0:
+                        {
+                            Console.WriteLine("Your number is out of the Menu!! Please Try again!");
+                            status = false;
+                            break;
+                        }
+                    case 1:
+                        {
+                            Console.WriteLine("Welcome this is Calculate Sum Program!");
+                            Console.WriteLine("How many numbers you will add?");
+                            int Total = Convert.ToInt32(Console.ReadLine());
+                            if (Total == 5)
+                            {
+
+                                Console.WriteLine($"Your Total Sum is = {GetInput()}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid you over exceed the capacity, It should be 5 numbers. Please try again");
+                            }
+                            Console.WriteLine("________________________________________");
+
+                            status = true;
+                            break;
+                        }
+                    case 2:
+                        {
+                            Console.WriteLine("Welcome this is Calculate Sum of Squares Program!");
+                            Console.WriteLine($"The Value of all the sum of sqaure is = {GetInput2()}");
+                            
+                            status = true;
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.WriteLine("Welcome this is Calculate Sum of Cubes Program!");
+                            Console.WriteLine($"The Value of all the sum of sqaure is = {GetInput3()}");
+                            status = true;
+                            break;
+                        }
+                    case 4:
+                        {
+                            Console.WriteLine("Exit");
+                            status = false;
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Your number is out of the Menu!! Please try again");
+                            status = true;
+                            break;
+                        }
+                }
+                Console.ReadLine();
+            } while (status == true);
+
+
+        }
+        static int CalculateSum(int num1, int num2, int num3, int num4, int num5)
+        {
+            return num1 + num2 + num3 + num4 + num5;
+        }
+        static int GetInput()
+        {
+            Console.WriteLine("Please Enter Your number");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("PLease Enter your number");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter your number");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter your number");
+            int num4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter your number");
+            int num5 = Convert.ToInt32(Console.ReadLine());
+
+            return CalculateSum(num1, num2, num3, num4, num5);
+        }
+        static int CalculateSumOfSquares(int num1, int num2, int num3, int num4)
+        {
+            return num1 + num2 + num3 + num4;
+        }
+        static int GetInput2()
+        {
+
+                Console.WriteLine("Please Enter your number");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                num1 = num1 * num1;
+                Console.WriteLine($"The Sum of this number is = {num1}");
+
+                Console.WriteLine("Please Enter your number");
+                int num2 = Convert.ToInt32(Console.ReadLine());
+                num2=num2 * num2;
+                Console.WriteLine($"The sum of this number is = {num2}");
+
+                Console.WriteLine("Please Enter your number");
+                int num3 = Convert.ToInt32(Console.ReadLine());
+                num3 = num3 * num3;
+                Console.WriteLine($"The sum of this number is = {num3}");
+            
+                Console.WriteLine("Please Enter your number");
+                int num4 = Convert.ToInt32(Console.ReadLine());
+                num4 = num4 * num4;
+                Console.WriteLine($"The sum of this number is = {num4}");
+
+
+            return CalculateSumOfSquares(num1, num2, num3, num4);
+
+        }
+        static int CalculateSumOfCubes(int num1, int num2, int num3, int num4, int num5 )
+        {
+            return num1+num2 + num3 + num4 + num5;
+        }
+        static int GetInput3()
+        {
+            Console.WriteLine("Please Enter your number");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            num1 = num1 * num1 * num1;
+            Console.WriteLine($"The Sum of this number is = {num1}");
+
+            Console.WriteLine("Please Enter your number");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            num2 = num2 * num2 * num2;
+            Console.WriteLine($"The sum of this number is = {num2}");
+
+            Console.WriteLine("Please Enter your number");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+            num3 = num3 * num3 * num3;
+            Console.WriteLine($"The sum of this number is = {num3}");
+
+            Console.WriteLine("Please Enter your number");
+            int num4 = Convert.ToInt32(Console.ReadLine());
+            num4 = num4 * num4 * num4 ;
+            Console.WriteLine($"The sum of this number is = {num4}");
+            Console.WriteLine("Please enter your number");
+            int num5 = Convert.ToInt32(Console.ReadLine());
+            num4 = num4 * num4 * num4 ;
+            Console.WriteLine($"The sum of this number is = {num5}");
+
+            return CalculateSumOfCubes(num1, num2, num3, num4, num5);
+        }
+        static void CalculateAverage()
+        {
+            Console.WriteLine();
+        }
+    }
+}
