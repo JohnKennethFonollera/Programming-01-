@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Net_Framework_week_04__2_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            Console.WriteLine("Please Enter Hourly Pay Rate =");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter Hourse worked");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            int num3 = num1 * num2;
+
+            if ((num3 < 300) || (num3 > 300.01))
+            {
+                Console.WriteLine($"Your gross pay is {num3}");
+                {
+                    Console.WriteLine($"Your With holding tax is 10%");
+                    {
+                        Console.WriteLine($"Your net pay is {(num3 - 0.10)}");
+                    }
+                }
+            }
+            else
+            {
+
+
+                Console.WriteLine($"Your gross pay is = {num3}");
+                {
+                    Console.WriteLine($"Your Withholding Tax is 12%");
+                    {
+                        Console.WriteLine($"Your net pay is {(num3 - 0.12)}");
+                    }
+                }
+            }
+            
+            Console.WriteLine("Please enter any keys to exit");
+            Console.ReadLine();
+
+        }
+
+          
+    }
+}
